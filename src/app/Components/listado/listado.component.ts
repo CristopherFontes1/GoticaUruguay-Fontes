@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from './product.model';
 
 @Component({
@@ -6,14 +6,9 @@ import { Product } from './product.model';
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.css']
 })
-export class ListadoComponent implements OnInit {
+export class ListadoComponent implements  OnInit {
  
-
-  addCarrito() {
-    console.log('Añadir al carrito');
-  }
- 
- 
+  @Output() productClicked: EventEmitter<any>;
   @Input() products: Product[] = [
     {
       id:'1',
@@ -87,6 +82,14 @@ export class ListadoComponent implements OnInit {
     }
 
   ]
+
+ addCarrito() {
+    console.log('Añadir al carrito');
+
+  }
+
+
+
 
 
   constructor() { }
