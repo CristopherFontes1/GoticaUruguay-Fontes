@@ -1,2 +1,9 @@
 <app-header></app-header>
-<p>listado works!</p>
+<h3>Peliculas a la venta XD</h3>
+<div *ngFor="let i of products">
+    {{i.title}}
+    <img [src]= "i.image" alt= "">
+    <strong>{{i.price}}</strong>
+    <button (click)="addCarrito()">Agregar al Carrito</button>
+    
+</div>  
