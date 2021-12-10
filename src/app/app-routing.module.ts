@@ -5,7 +5,7 @@ import {ListadoComponent} from './Components/listado/listado.component';
 import { LoginComponent } from './Components/login/login.component';
 import { CarritoComponent } from './Components/carrito/carrito.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
-
+import { InfoComponent } from './Components/info/info.component'
 
 const routes: Routes = [
   {
@@ -24,6 +24,10 @@ const routes: Routes = [
   {
     path: 'listado',
     component: ListadoComponent
+  },
+  {
+    path: 'listado/:id',
+    component: InfoComponent
   },
   {
     path: 'carrito',

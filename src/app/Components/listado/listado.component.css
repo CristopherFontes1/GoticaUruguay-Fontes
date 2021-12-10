@@ -1,4 +1,27 @@
-.product-grid {
+.container {
+    width: 80% !important;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+
+}
+
+
+
+.card {
+    margin-bottom: 50px;
+    width: 500px !important;
+    margin-right: 20px;
+    margin-left: 20px;
+
+}
+
+
+
+
+
+
+
+/*.product-grid {
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -19,3 +42,4 @@ img {
     max-width: 100%;
 }
 
+*/

@@ -1,15 +1,14 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from './product.model';
+import { isNgTemplate } from '@angular/compiler';
+import { Injectable } from '@angular/core';
+import { Product } from './Components/listado/product.model';
 
-@Component({
-  selector: 'app-listado',
-  templateUrl: './listado.component.html',
-  styleUrls: ['./listado.component.css']
+
+@Injectable({
+  providedIn: 'root'
 })
-export class ListadoComponent implements  OnInit {
- 
-  @Output() productClicked: EventEmitter<any>;
-  @Input() products: Product[] = [
+export class ProductsService {
+
+  products: Product[] = [
     {
       id:'1',
       image: 'assets/Imagenes/1.png',
@@ -83,18 +82,13 @@ export class ListadoComponent implements  OnInit {
 
   ]
 
- addCarrito() {
-    console.log('Añadir al carrito');
-
-  }
-
-
-
-
-
   constructor() { }
 
-  ngOnInit(): void {
+  getAllProducts () {
+    return  this.products;
   }
 
+  getProduct (id: string) {
+    return this.products.find(item => id === item.id);
+  }
 }
