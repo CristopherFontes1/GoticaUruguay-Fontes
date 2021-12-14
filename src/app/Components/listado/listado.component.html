@@ -1,12 +1,13 @@
 <app-header></app-header>
 <div class="container-fluid">
         <h3>Peliculas a la venta</h3>
-    <div class="d-flex flex-wrap" style="margin: 0px;">
-        <div *ngFor="let i of products" class="card">
+    <div class="row" style="margin: 0px;">
+        <div *ngFor="let i of products" class="card col-4">
             <strong>Titulo: {{i.title}}</strong> 
             <img [src]= "i.image" alt= "">
             <strong>Precio: {{i.price}}</strong>
             <button class="btn btn-primary" (click)="addCarrito()">Agregar al Carrito</button>
+            <!--<a [routerLink]=this.router.snapshot.params.id>Ver detalle </a>-->
         </div>  
     </div>
 </div>

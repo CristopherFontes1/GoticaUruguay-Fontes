@@ -7,9 +7,12 @@ import { Product } from './product.model';
   styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent implements  OnInit {
+
+
  
   @Output() productClicked: EventEmitter<any>;
-  @Input() products: Product[] = [
+  
+  products: Product[] = [
     {
       id:'1',
       image: 'assets/Imagenes/1.png',

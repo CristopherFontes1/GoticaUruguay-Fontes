@@ -11,18 +11,18 @@ import { Product } from '../listado/product.model';
 })
 export class InfoComponent implements OnInit {
 
-  product: Product;
+  product: Product = {} as Product;
 
   constructor(
     private route: ActivatedRoute,
-    private ProductsService: ProductsService
+    private productsService: ProductsService
     
   ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe ((params: Params) => {
         const id = params.id;
-        this.product = this.ProductsService.getProduct(id)!;
+        this.product = this.productsService.getProduct(id)!;
     });
   } 
 
